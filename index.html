@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sumit Kumar | Backend & Agentic AI Engineer</title>
+<meta name="description" content="Final-year B.Tech (AI & ML) at NIT Kurukshetra building scalable backend systems and LLM agents.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>⚙️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF0F6; --surface:#FFFFFF; --ink:#16213E; --muted:#56607A; --line:#D3D9E6;
+  --accent:#2D5BFF; --accent-ink:#FFFFFF; --signal:#E8590C;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#10172B;--surface:#1A2340;--ink:#E8ECF6;--muted:#98A3BF;--line:#2B3659;--accent:#7C9BFF;--accent-ink:#10172B;--signal:#FF8A4C}
+}
+:root[data-theme="dark"]{--bg:#10172B;--surface:#1A2340;--ink:#E8ECF6;--muted:#98A3BF;--line:#2B3659;--accent:#7C9BFF;--accent-ink:#10172B;--signal:#FF8A4C}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.nav b{font:700 1.05rem var(--display)}
+.nav nav{display:flex;gap:22px;align-items:center;font-size:.95rem}
+.nav nav a{text-decoration:none;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;width:36px;height:36px;cursor:pointer;font-size:1rem}
+@media(max-width:640px){.nav nav a.hide{display:none}}
+
+/* hero */
+.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.hero h1{font:800 clamp(2.8rem,7vw,5rem)/.98 var(--display);letter-spacing:-.03em}
+.hero p.lead{margin:22px 0 28px;font-size:1.2rem;color:var(--muted);max-width:34ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid var(--line)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:48px}}
+
+/* scaling demo */
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.demo h2{font:700 1rem var(--display);margin-bottom:4px}
+.demo small{color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;padding:3px;margin:14px 0}
+.seg button{border:0;background:none;color:var(--muted);padding:7px 14px;border-radius:8px;font:600 .9rem var(--body);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.rps{font:800 3rem/1 var(--display);letter-spacing:-.02em}
+.rps span{font:500 1rem var(--body);color:var(--muted);margin-left:6px}
+.diagram{margin-top:16px;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.node{height:44px;border-radius:8px;border:1px dashed var(--line);display:grid;place-items:center;font-size:.72rem;color:var(--muted);transition:background .35s,border-color .35s,color .35s}
+.node.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);border-style:solid}
+.lb{grid-column:1/-1;text-align:center;padding:8px;border-radius:8px;border:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+.demo .note{margin-top:14px;font-size:.88rem;color:var(--muted)}
+
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2.t{font:700 clamp(1.7rem,3.5vw,2.3rem)/1.1 var(--display);letter-spacing:-.02em;margin-bottom:28px}
+.projects{display:grid;gap:20px}
+.proj{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;grid-template-columns:1fr 220px;gap:28px}
+.proj h3{font:700 1.4rem/1.2 var(--display)}
+.proj .stack{margin:8px 0 14px;color:var(--muted);font-size:.9rem}
+.proj ul{padding-left:1.1em;display:grid;gap:8px;max-width:68ch}
+.proj .links{display:flex;gap:14px;margin-top:16px;font-weight:600;font-size:.95rem}
+.proj .links a{color:var(--accent)}
+.stat{border-left:3px solid var(--signal);padding-left:14px;margin-bottom:16px}
+.stat strong{display:block;font:800 1.9rem/1.1 var(--display)}
+.stat span{font-size:.85rem;color:var(--muted)}
+@media(max-width:760px){.proj{grid-template-columns:1fr}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
+.job{display:grid;grid-template-columns:200px 1fr;gap:28px}
+.job .when{color:var(--muted);font-size:.95rem}
+.job h3{font:700 1.25rem var(--display)}
+.job ul{margin-top:12px;padding-left:1.1em;display:grid;gap:10px;max-width:68ch}
+@media(max-width:700px){.job{grid-template-columns:1fr;gap:8px}}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px 40px}
+.skills h3{font:700 1rem var(--display);margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:4px 12px;border:1px solid var(--line);border-radius:999px;font-size:.9rem;background:var(--surface)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two h3{font:700 1.15rem var(--display);margin-bottom:12px}
+.two p{margin-bottom:12px}
+.two small{color:var(--muted);display:block}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.contact{text-align:left}
+.contact a.mail{font:800 clamp(1.4rem,4.5vw,2.6rem)/1.15 var(--display);letter-spacing:-.02em;text-decoration:underline;text-decoration-color:var(--signal);text-underline-offset:6px;word-break:break-all}
+.contact .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem}
+
+/* single page-load moment */
+@media(prefers-reduced-motion:no-preference){
+  .hero h1,.hero .lead,.hero .btns,.demo{animation:in .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero .lead{animation-delay:.08s}.hero .btns{animation-delay:.16s}.demo{animation-delay:.24s}
+  @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <b>Sumit Kumar</b>
+  <nav aria-label="Primary">
+    <a href="#projects">Projects</a>
+    <a class="hide" href="#experience">Experience</a>
+    <a class="hide" href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+    <button class="theme" id="theme" aria-label="Toggle dark mode">◐</button>
+  </nav>
+</div></header>
+
+<main>
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>I build backends that scale and agents that stay on task.</h1>
+      <p class="lead">Final-year B.Tech (AI &amp; ML) student at NIT Kurukshetra, working on distributed systems, RAG pipelines, and LLM agents.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="https://github.com/sumit-Kumar023/" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="resume.pdf" download>Download resume</a>
+      </div>
+    </div>
+
+    <div class="demo" aria-live="polite">
+      <h2>Scalable URL Shortener</h2>
+      <small>Throughput under k6 load tests. Pick the number of backend instances behind Nginx.</small><br>
+      <div class="seg" role="group" aria-label="Backend instances">
+        <button id="b1" aria-pressed="true">1 instance</button>
+        <button id="b6" aria-pressed="false">6 instances</button>
+      </div>
+      <div class="rps"><span id="rps">1,140</span><span>requests/sec</span></div>
+      <div class="diagram" aria-hidden="true">
+        <div class="lb">Nginx load balancer</div>
+        <div class="node on">API</div><div class="node">API</div><div class="node">API</div>
+        <div class="node">API</div><div class="node">API</div><div class="node">API</div>
+      </div>
+      <p class="note" id="note">Baseline: one Node.js instance with Redis caching.</p>
+    </div>
+  </div>
+</div>
+
+<section id="projects"><div class="wrap">
+  <h2 class="t">Projects</h2>
+  <div class="projects">
+
+    <article class="proj">
+      <div>
+        <h3>Scalable URL Shortener &amp; Analytics Platform</h3>
+        <p class="stack">React, TypeScript, Node.js, Express.js, MongoDB, Redis, Docker, Nginx, k6</p>
+        <ul>
+          <li>Full-stack URL platform with JWT-secured REST APIs, Base62 short codes, custom aliases, link expiry, and click analytics, backed by optimized MongoDB indexing.</li>
+          <li>MongoDB Replica Set for high availability. Redis Cluster for cache-aside caching and rate limiting. A single instance sustained 1,618 RPS at 31.9 ms p95.</li>
+          <li>Scaled horizontally with Docker and Nginx from 1 to 6 instances, validated by 37 automated tests across 6 suites.</li>
+        </ul>
+        <div class="links"><a href="https://github.com/sumit-Kumar023/Scalable-Url-Shortener---System-Design" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>4.9x</strong><span>throughput from 1 to 6 instances</span></div>
+        <div class="stat"><strong>82%</strong><span>scaling efficiency</span></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div>
+        <h3>ResearchPilot: Agentic RAG Research Assistant</h3>
+        <p class="stack">Python, LangGraph, LangChain, Qdrant, Streamlit, OpenAI, DeepEval</p>
+        <ul>
+          <li>Multi-agent system in LangGraph. An LLM router coordinates retrieval, claim-verification, and direct-answer agents, with bounded retries to prevent runaway loops.</li>
+          <li>RAG pipeline ingesting PDF, TXT, Markdown, URL, and ArXiv sources into Qdrant with cached embeddings, plus web and ArXiv retrieval to ground claim verification.</li>
+          <li>DeepEval pipeline over 200+ benchmark queries, used as a quality gate for output reliability.</li>
+        </ul>
+        <div class="links">
+          <a href="https://researchpilot-agentic-rag-chatbot-production-4bce.up.railway.app/" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/sumit-Kumar023/ResearchPilot-Agentic-RAG-Chatbot" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>0.91</strong><span>faithfulness</span></div>
+        <div class="stat"><strong>0.93</strong><span>answer relevancy</span></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div>
+        <h3>Microservices-Driven Real-Time Chat System</h3>
+        <p class="stack">WebSocket, REST, Redis, Kafka, MongoDB, PostgreSQL, S3, APNs/FCM, Docker, AWS</p>
+        <ul>
+          <li>Distributed chat architecture designed to target 500M DAU and about 700K messages/sec at peak, with separate WebSocket and REST paths and stateless, horizontally scalable services.</li>
+          <li>Store-first, deliver-second pipeline using Snowflake IDs, per-conversation sequence numbers, and <code>client_msg_id</code> idempotency. Kafka and APNs/FCM push support ordered delivery, offline sync, presence, and read receipts.</li>
+          <li>Polyglot data layer: MongoDB for messages, PostgreSQL for users and groups, Redis for TTL-based presence, S3 for media.</li>
+        </ul>
+        <div class="links">
+          <a href="https://chat-app-6ly8.onrender.com/" target="_blank" rel="noopener">Live demo</a>
+          <a href="https://github.com/sumit-Kumar023/Real-Time-Chat-Application" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>700K/s</strong><span>peak messages, design target</span></div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div>
+        <h3>CostMind: Cost-Aware Conversational Agent</h3>
+        <p class="stack">Python, LangGraph, LiteLLM, Qdrant, Redis, FastAPI</p>
+        <ul>
+          <li>Memory-enabled agent combining short-term buffers with per-user long-term vector memory ranked by similarity, recency, and importance.</li>
+          <li>Cost-aware routing with LiteLLM: complexity classification, confidence-based escalation, budgets, provider fallback, and privacy-scoped semantic caching that avoided 17.8% of LLM calls.</li>
+          <li>Benchmarked on 320 queries against an always-GPT-4o baseline, with a 4.7/5 LLM-judged quality score on 60 queries.</li>
+        </ul>
+        <div class="links"><a href="https://github.com/sumit-Kumar023/CostMind" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>83.2%</strong><span>lower LLM cost ($1.27 to $0.21)</span></div>
+        <div class="stat"><strong>63.4%</strong><span>fewer prompt tokens</span></div>
+      </div>
+    </article>
+
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2 class="t">Experience</h2>
+  <div class="job">
+    <div class="when">January 2026 to March 2026<br>Remote</div>
+    <div>
+      <h3>Research Intern, Crushaders Tech Solutions, LLP</h3>
+      <p style="color:var(--muted)">Automation for social media engagement and reputation management</p>
+      <ul>
+        <li><strong>Agentic workflow automation:</strong> built an API-driven scheduling and publishing pipeline in Python across Facebook, Instagram, and X, automating content distribution end to end.</li>
+        <li><strong>LLM response agent:</strong> designed agents that reply to comments, messages, and reviews using intent detection and structured outputs.</li>
+        <li><strong>Output validation and guardrails:</strong> added checks to a review-request and spam/fake-review filtering pipeline, improving the reliability of customer-feedback data.</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2 class="t">Skills</h2>
+  <div class="skills" id="skillGrid"></div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <div class="two">
+    <div>
+      <h3>Education</h3>
+      <p><strong>B.Tech, Artificial Intelligence and Machine Learning</strong>
+        <small>National Institute of Technology, Kurukshetra. 2023 to expected 2027. CGPA 8.13</small></p>
+      <p><strong>Senior Secondary (CBSE)</strong>
+        <small>Aggarwal Public School. 2023. 91%</small></p>
+    </div>
+    <div>
+      <h3>Recognition and leadership</h3>
+      <p><strong>Outstanding Mentee</strong>
+        <small>Foundation For Excellence (FFE) Scholarship Program, FY 2025–26</small></p>
+      <p><strong>Volunteer Manager</strong>
+        <small>Anant, The Mathematical Society, NIT Kurukshetra</small></p>
+    </div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap contact">
+  <h2 class="t">Let’s talk</h2>
+  <a class="mail" href="mailto:sumitkumariit000@gmail.com">sumitkumariit000@gmail.com</a>
+  <div class="row">
+    <a class="btn" href="tel:+918447518378">+91-8447518378</a>
+    <a class="btn" href="https://www.linkedin.com/in/sumit-kumar-375980293/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/sumit-Kumar023/" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://leetcode.com/u/hacksumit/" target="_blank" rel="noopener">LeetCode</a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Sumit Kumar</div></footer>
+
+<script>
+// Skills
+const skills = {
+  "Languages":["Python","C++","C","JavaScript","TypeScript","SQL"],
+  "Backend":["Node.js","Express.js","FastAPI","React","REST APIs","WebSocket","Microservices","JWT"],
+  "System design":["Scalability","High availability","Fault tolerance","Load balancing","Caching","Kafka"],
+  "Databases":["MongoDB","PostgreSQL","Redis","Qdrant"],
+  "Cloud and tools":["AWS","Docker","Nginx","Git","Postman","Automated testing","k6"],
+  "AI":["LLMs","RAG","LangChain","LangGraph","Agentic AI"],
+  "CS fundamentals":["DSA","OOP","DBMS","Operating systems","Computer networks"]
+};
+const grid = document.getElementById('skillGrid');
+for (const [k, v] of Object.entries(skills)) {
+  const d = document.createElement('div');
+  d.innerHTML = `<h3>${k}</h3><div class="chips">${v.map(s => `<span>${s}</span>`).join('')}</div>`;
+  grid.appendChild(d);
+}
+
+// Scaling demo (only the two measured data points)
+const b1 = document.getElementById('b1'), b6 = document.getElementById('b6');
+const rps = document.getElementById('rps'), note = document.getElementById('note');
+const nodes = [...document.querySelectorAll('.node')];
+let current = 1140, raf;
+function animateTo(target) {
+  cancelAnimationFrame(raf);
+  const from = current, t0 = performance.now();
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (function step(t) {
+    const p = reduce ? 1 : Math.min((t - t0) / 700, 1);
+    current = Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3)));
+    rps.textContent = current.toLocaleString('en-US');
+    if (p < 1) raf = requestAnimationFrame(step);
+  })(t0);
+}
+function setInstances(n) {
+  b1.setAttribute('aria-pressed', n === 1);
+  b6.setAttribute('aria-pressed', n === 6);
+  nodes.forEach((el, i) => el.classList.toggle('on', i < n));
+  animateTo(n === 1 ? 1140 : 5640);
+  note.textContent = n === 1
+    ? 'Baseline: one Node.js instance with Redis caching.'
+    : '4.9x the baseline at 82% scaling efficiency.';
+}
+b1.onclick = () => setInstances(1);
+b6.onclick = () => setInstances(6);
+
+// Theme toggle
+const root = document.documentElement;
+document.getElementById('theme').onclick = () => {
+  const dark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#10172B';
+  root.setAttribute('data-theme', dark ? 'light' : 'dark');
+};
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
