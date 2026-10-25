@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sumit Kumar | Backend & Agentic AI Engineer</title>
 <meta name="description" content="Final-year B.Tech (AI & ML) at NIT Kurukshetra building scalable backend systems and LLM agents.">
-<meta name="theme-color" content="#0D0A1A">
+<meta name="theme-color" content="#09090A">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>⚙️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,16 +13,16 @@
 <script>document.documentElement.classList.add('js')</script>
 <style>
 :root{
-  --bg:#F5F3FC; --surface:#FFFFFF; --ink:#1A1535; --muted:#645D86; --line:#E2DDF2;
-  --accent:#6D4AFF; --accent-ink:#FFFFFF; --signal:#FF4D8D; --ok:#0FB77A; --teal:#12C2B0;
+  --bg:#F4F5F7; --surface:#FFFFFF; --ink:#0A0A0B; --muted:#5A606B; --line:#DDE0E6;
+  --accent:#F25C00; --accent-ink:#FFFFFF; --signal:#1F6FFF; --ok:#12B76A; --teal:#12B76A;
   --display:'Sora','Segoe UI',system-ui,sans-serif;
   --body:'Manrope','Segoe UI',system-ui,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
 }
 @media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--bg:#0D0A1A;--surface:#171229;--ink:#EFEBFC;--muted:#A59DC6;--line:#2B2449;--accent:#A68CFF;--accent-ink:#0D0A1A;--signal:#FF7AB0;--ok:#3DDC9C;--teal:#2DD4BF}
+  :root:not([data-theme="light"]){--bg:#09090A;--surface:#141416;--ink:#F3F4F6;--muted:#9CA3AF;--line:#27282D;--accent:#FF8A2B;--accent-ink:#09090A;--signal:#4B93FF;--ok:#22D17F;--teal:#22D17F}
 }
-:root[data-theme="dark"]{--bg:#0D0A1A;--surface:#171229;--ink:#EFEBFC;--muted:#A59DC6;--line:#2B2449;--accent:#A68CFF;--accent-ink:#0D0A1A;--signal:#FF7AB0;--ok:#3DDC9C;--teal:#2DD4BF}
+:root[data-theme="dark"]{--bg:#09090A;--surface:#141416;--ink:#F3F4F6;--muted:#9CA3AF;--line:#27282D;--accent:#FF8A2B;--accent-ink:#09090A;--signal:#4B93FF;--ok:#22D17F;--teal:#22D17F}
 @property --a{syntax:'<angle>';initial-value:0deg;inherits:false}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
@@ -103,7 +103,7 @@ header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--b
 
 /* live system demo */
 .demo{background:color-mix(in srgb,var(--surface) 86%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:20px;padding:22px;position:relative;box-shadow:0 30px 60px -40px var(--accent)}
-.demo::before{content:"";position:absolute;inset:-1px;border-radius:21px;padding:1px;background:conic-gradient(from var(--a),transparent 70%,var(--accent),var(--signal),transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 6s linear infinite;pointer-events:none}
+.demo::before{content:"";position:absolute;inset:-1px;border-radius:21px;padding:1px;background:conic-gradient(from var(--a),transparent 70%,var(--accent),var(--signal),transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;animation:spin 6s linear infinite;pointer-events:none}
 .demo h2{font:700 1rem var(--display);margin-bottom:4px}
 .demo small{color:var(--muted)}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;padding:3px;margin:14px 0 6px}
@@ -223,7 +223,7 @@ dialog.pal[open]{animation:pal .22s cubic-bezier(.2,.9,.3,1.2)}
 /* ===== v3 modern theme overrides ===== */
 .blob{opacity:.34}
 .blob.c{width:340px;height:340px;background:var(--teal);top:38%;left:46%;opacity:.16;animation:drift2 28s ease-in-out infinite alternate-reverse}
-:root{--grad:linear-gradient(120deg,var(--accent),var(--signal))}
+:root{--grad:linear-gradient(120deg,var(--accent),var(--signal));--grad:linear-gradient(in oklab 120deg,var(--accent),var(--signal))}
 /* floating glass pill nav */
 header.nav{background:none;backdrop-filter:none;border:0;top:10px;pointer-events:none}
 .nav .wrap{max-width:980px;height:56px;margin:10px auto 0;padding:0 10px 0 20px;pointer-events:auto;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--surface) 70%,transparent);backdrop-filter:blur(18px) saturate(1.5);box-shadow:0 18px 40px -26px var(--accent)}
@@ -290,34 +290,34 @@ section h2.t{font-size:clamp(2rem,4vw,2.8rem);letter-spacing:-.035em}
             <svg viewBox="0 0 200 200" role="img" aria-label="Anime-style illustration of Sumit wearing headphones and a hoodie">
               <defs>
                 <clipPath id="clip"><circle cx="100" cy="100" r="100"/></clipPath>
-                <linearGradient id="bgA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A68CFF"/><stop offset="1" stop-color="#FF7AB0"/></linearGradient>
-                <radialGradient id="iris" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#C4B5FF"/><stop offset="1" stop-color="#6D4AFF"/></radialGradient>
+                <linearGradient id="bgA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5AA0FF"/><stop offset="1" stop-color="#FF8A2B"/></linearGradient>
+                <radialGradient id="iris" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#9CC4FF"/><stop offset="1" stop-color="#1F6FFF"/></radialGradient>
               </defs>
               <g clip-path="url(#clip)">
                 <rect width="200" height="200" fill="url(#bgA)" opacity=".35"/>
                 <circle cx="40" cy="40" r="3" fill="#fff" opacity=".8"/><circle cx="165" cy="55" r="2.4" fill="#fff" opacity=".8"/><circle cx="150" cy="30" r="1.6" fill="#fff"/>
-                <path d="M22 205 C22 164 66 150 100 150 C134 150 178 164 178 205 Z" fill="#6D4AFF"/>
-                <path d="M78 152 Q100 172 122 152 L122 160 Q100 180 78 160 Z" fill="#4B2EC4"/>
+                <path d="M22 205 C22 164 66 150 100 150 C134 150 178 164 178 205 Z" fill="#1F6FFF"/>
+                <path d="M78 152 Q100 172 122 152 L122 160 Q100 180 78 160 Z" fill="#1450C4"/>
                 <path d="M92 168 V190 M108 168 V190" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
                 <rect x="90" y="132" width="20" height="24" rx="8" fill="#F4C6A8"/>
-                <path d="M52 104 C40 60 70 34 100 34 C130 34 160 60 148 104 L148 124 L52 124 Z" fill="#1A1535"/>
+                <path d="M52 104 C40 60 70 34 100 34 C130 34 160 60 148 104 L148 124 L52 124 Z" fill="#0A0A0B"/>
                 <ellipse cx="57" cy="108" rx="6" ry="9" fill="#FFD9C2"/><ellipse cx="143" cy="108" rx="6" ry="9" fill="#FFD9C2"/>
                 <path d="M58 92 C58 66 78 56 100 56 C122 56 142 66 142 92 L142 112 C142 138 122 152 100 152 C78 152 58 138 58 112 Z" fill="#FFD9C2"/>
                 <ellipse cx="72" cy="124" rx="9" ry="4.5" fill="#FF8FA3" opacity=".5"/><ellipse cx="128" cy="124" rx="9" ry="4.5" fill="#FF8FA3" opacity=".5"/>
                 <g class="eye l"><ellipse cx="80" cy="108" rx="14" ry="17" fill="#fff"/>
-                  <g class="look"><ellipse cx="80" cy="110" rx="10" ry="13" fill="url(#iris)"/><ellipse cx="80" cy="111" rx="5" ry="7" fill="#0D0A1A"/><circle cx="76" cy="104" r="3.4" fill="#fff"/><circle cx="84" cy="116" r="1.6" fill="#fff"/></g>
-                  <path d="M65 102 Q80 88 95 102" stroke="#1A1535" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
+                  <g class="look"><ellipse cx="80" cy="110" rx="10" ry="13" fill="url(#iris)"/><ellipse cx="80" cy="111" rx="5" ry="7" fill="#0A0A0B"/><circle cx="76" cy="104" r="3.4" fill="#fff"/><circle cx="84" cy="116" r="1.6" fill="#fff"/></g>
+                  <path d="M65 102 Q80 88 95 102" stroke="#0A0A0B" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
                 <g class="eye r"><ellipse cx="120" cy="108" rx="14" ry="17" fill="#fff"/>
-                  <g class="look"><ellipse cx="120" cy="110" rx="10" ry="13" fill="url(#iris)"/><ellipse cx="120" cy="111" rx="5" ry="7" fill="#0D0A1A"/><circle cx="116" cy="104" r="3.4" fill="#fff"/><circle cx="124" cy="116" r="1.6" fill="#fff"/></g>
-                  <path d="M105 102 Q120 88 135 102" stroke="#1A1535" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
+                  <g class="look"><ellipse cx="120" cy="110" rx="10" ry="13" fill="url(#iris)"/><ellipse cx="120" cy="111" rx="5" ry="7" fill="#0A0A0B"/><circle cx="116" cy="104" r="3.4" fill="#fff"/><circle cx="124" cy="116" r="1.6" fill="#fff"/></g>
+                  <path d="M105 102 Q120 88 135 102" stroke="#0A0A0B" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
                 <path d="M100 124 l-2 4 h4" stroke="#D69C80" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M91 136 Q100 144 109 136" stroke="#9A4A3A" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-                <path d="M54 100 C48 52 82 36 100 36 C128 36 156 54 146 100 L140 80 L128 98 L117 70 L104 96 L92 68 L80 96 L66 76 Z" fill="#1A1535"/>
-                <path class="hairhl" d="M96 44 C108 44 124 50 130 62 C116 54 104 54 96 44 Z" fill="#A68CFF" opacity=".7"/>
-                <path d="M54 100 L56 124 L62 106 Z M146 100 L144 124 L138 106 Z" fill="#1A1535"/>
-                <path d="M54 104 C50 30 150 30 146 104" stroke="#FF7AB0" stroke-width="7" fill="none" stroke-linecap="round"/>
-                <rect x="44" y="98" width="15" height="34" rx="7" fill="#E0306F"/><rect x="141" y="98" width="15" height="34" rx="7" fill="#E0306F"/>
-                <rect class="cup" x="48" y="106" width="7" height="18" rx="3.5" fill="#FFE1EE"/><rect class="cup" x="145" y="106" width="7" height="18" rx="3.5" fill="#FFE1EE"/>
+                <path d="M54 100 C48 52 82 36 100 36 C128 36 156 54 146 100 L140 80 L128 98 L117 70 L104 96 L92 68 L80 96 L66 76 Z" fill="#0A0A0B"/>
+                <path class="hairhl" d="M96 44 C108 44 124 50 130 62 C116 54 104 54 96 44 Z" fill="#5AA0FF" opacity=".7"/>
+                <path d="M54 100 L56 124 L62 106 Z M146 100 L144 124 L138 106 Z" fill="#0A0A0B"/>
+                <path d="M54 104 C50 30 150 30 146 104" stroke="#FF8A2B" stroke-width="7" fill="none" stroke-linecap="round"/>
+                <rect x="44" y="98" width="15" height="34" rx="7" fill="#E55A00"/><rect x="141" y="98" width="15" height="34" rx="7" fill="#E55A00"/>
+                <rect class="cup" x="48" y="106" width="7" height="18" rx="3.5" fill="#FFD9B8"/><rect class="cup" x="145" y="106" width="7" height="18" rx="3.5" fill="#FFD9B8"/>
               </g>
             </svg>
           </button>
@@ -644,7 +644,7 @@ b6.onclick = () => setInstances(6);
 
 // Theme
 function toggleTheme() {
-  const dark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#0D0A1A';
+  const dark = getComputedStyle(root).getPropertyValue('--bg').trim() === '#09090A';
   root.setAttribute('data-theme', dark ? 'light' : 'dark');
   colors();
 }
