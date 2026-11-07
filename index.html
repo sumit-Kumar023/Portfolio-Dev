@@ -291,9 +291,10 @@ dialog.pal::backdrop{background:rgba(5,6,12,.6);backdrop-filter:blur(4px)}
       <h3>Research Intern, <span class="co">Crushaders Tech Solutions, LLP</span></h3>
       <p style="color:var(--muted)">Automation for social media engagement and reputation management</p>
       <ul>
-        <li><strong>Agentic workflow automation:</strong> built an API-driven scheduling and publishing pipeline in Python across Facebook, Instagram, and X, automating content distribution end to end.</li>
-        <li><strong>LLM response agent:</strong> designed agents that reply to comments, messages, and reviews using intent detection and structured outputs.</li>
-        <li><strong>Output validation and guardrails:</strong> added checks to a review-request and spam/fake-review filtering pipeline, improving the reliability of customer-feedback data.</li>
+        <li><strong>Automated Scheduling &amp; Publishing Pipeline:</strong> built an API-driven automation workflow in Python using the Meta Graph API (Facebook, Instagram) and X API, with APScheduler for time-based job triggering, automating end-to-end content distribution with logging and failure handling to reduce manual intervention.</li>
+        <li><strong>Sentiment-Based Social Listening:</strong> developed a brand-mention and trend monitoring module using the pretrained twitter-roberta-base-sentiment-latest (RoBERTa) transformer to track shifts in customer perception over time.</li>
+        <li><strong>LLM-Powered Response Agent:</strong> designed response agents for comments, messages, and reviews using GPT-4o mini, with a separate LLM classification call for intent detection, intent-aware reply generation, and Pydantic schema-validated structured outputs, supporting both auto-send and human-approval modes.</li>
+        <li><strong>AI Output Validation &amp; Guardrails:</strong> trained an XGBoost classifier to filter spam and fake reviews, and implemented guardrail checks on generated content for competitor mentions and legal/promotional over-promising within the review-request pipeline, improving the reliability and quality of customer-feedback data.</li>
       </ul>
     </div>
   </div>
@@ -365,7 +366,7 @@ const EMAIL = 'sumitkumariit000@gmail.com';
 
 /* Skills + project chips */
 const skills = {
-  "AI and agents":["LLMs","RAG","LangChain","LangGraph","Agentic AI","LiteLLM","DeepEval","Qdrant","FAISS"],
+  "AI and agents":["LLMs","RAG","LangChain","LangGraph","Agentic AI","LiteLLM","DeepEval","Qdrant","FAISS","XGBoost","RoBERTa","Pydantic"],
   "Languages":["Python","C++","C","JavaScript","TypeScript","SQL"],
   "Backend":["FastAPI","Node.js","Express.js","React","REST APIs","WebSocket","Microservices","JWT"],
   "System design":["Scalability","High availability","Fault tolerance","Load balancing","Caching","Kafka"],
